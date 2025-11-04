@@ -12,6 +12,8 @@ agent = create_agent(
     debug=False,   
 )
 
+# This is just to show the graph of the agent.
+# This agent doesn't have any tools, so it will just return the answer to the question.
 from IPython.display import Image, display
 mermaid = agent.get_graph(xray=True).draw_mermaid_png()
 with open("agent_graph.png", "wb") as f:
