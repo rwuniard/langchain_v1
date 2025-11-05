@@ -30,3 +30,14 @@ results = agent.stream(
 
 for chunk in results:
     print(chunk.get("messages")[-1].content)
+
+messages = [
+    {"role": "user", "content": "What is the tallest building in the USA?"},
+    {"role": "system", "content": "You are a helpful assistant that can answer questions about various encyclopedia topics.."},
+    {"role": "assistant", "content": "Don't fail me."},
+]
+results = agent.invoke({"messages": messages})
+print(results)
+print("-"*100)
+for message in results.get("messages"):
+    print(message.content)
