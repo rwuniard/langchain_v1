@@ -16,7 +16,7 @@ DB_URI = os.getenv("REDIS_URL")
 async def main():
 
     # Set the Redis checkpointer.
-    async with (
+    async with (   
         AsyncRedisSaver.from_conn_string(DB_URI) as checkpointer_redis,
     ):
         await checkpointer_redis.setup()
